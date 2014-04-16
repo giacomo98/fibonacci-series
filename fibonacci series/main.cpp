@@ -2,17 +2,29 @@
 //  main.cpp
 //  fibonacci series
 //
-//  Created by giacomo baruzzi on 16/04/14.
-//  Copyright (c) 2014 giacomo baruzzi. All rights reserved.
+//  Created by giacomo baruzzi
 //
-
+//
 #include <iostream>
+#include <cmath>
 
-int main(int argc, const char * argv[])
-{
+using namespace std;
 
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+//method for calculate the fibonacci series
+
+int fibonacci(int n) {
+    const double phi = (1.0 + sqrt(5.0)) / 2;
+    const double psi = -1.0 / phi;
+    
+    return(pow(phi, n) - pow(psi, n)) / sqrt(5.0);
+    
 }
 
+// apply the method and print the results
+
+int main () {
+    for( int p = 1; p<10; p++)  {
+        cout << fibonacci(p) << endl;
+    }
+  
+}
